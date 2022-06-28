@@ -1,0 +1,44 @@
+.welcome {
+    font-weight: 900;
+    font-size: 3em;
+    animation: welcome 1000ms cubic-bezier(0.06, 0, 0.58, 1) forwards;
+    margin-left: 1rem;
+    margin-top: 20px;
+  }
+  
+  @keyframes welcome {
+    0% {
+      transform: translateY(-200%);
+    } 100% {
+      transform: translateY(0%);
+    }
+  }
+  
+  .search {
+    display: grid;
+    align-self: center;
+    height: 1.5rem;
+    width: 20em;
+    color: black;
+  }
+
+  .btn-search {
+    height: 1.5rem;
+    color: black;
+  }
+
+  .link-search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .links {
+    display: flex;
+    margin-top: 20px;
+    margin-right: 1rem;
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: 1.2rem;
+  }

@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  font-family: roboto;
+  word-spacing: 0.1rem;
+  color: #fff;
+}
+
+#root {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #191C25;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}

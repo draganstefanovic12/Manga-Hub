@@ -1,0 +1,52 @@
+* {
+    word-spacing: 0.2rem;
+}
+
+.searchBox {
+    display: grid;
+    margin: 0 auto;
+    grid-template-rows: repeat(auto-fit, minmax(1fr, 1fr));
+    grid-template-columns: 325px 200px 300px;
+    width: 55em;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    animation: manga 500ms 1 ease-in-out forwards;
+    background-color: #1B2430;
+}
+
+.detail {
+    grid-row: 2;
+    grid-column: 2 / 3
+}
+
+.desc {
+    grid-column: 2 / 4;
+    height: 250px;
+    overflow: hidden;
+    grid-row: 3;
+}
+
+@keyframes manga {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
+
+.searchCover {
+    grid-row: 1 / 5;
+    width: 285px;
+    height: 400px;
+}
+
+.mangaName {
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    grid-column: 2 / 4;
+}
+
+.mangaName:hover, .searchCover:hover {
+    cursor: pointer;
+}
