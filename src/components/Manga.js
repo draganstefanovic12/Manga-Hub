@@ -1,7 +1,17 @@
+import "../styles/Manga.css";
+import { useParams } from "react-router-dom";
+import Header from "./Header";
+import MangaChapters from "./MangaChapters";
+import MangaCard from "./MangaCard";
+
 const Manga = () => {
+  const id = useParams();
+
   return (
     <>
-      <p>hey!</p>
+      <Header />
+      <MangaCard id={id.manga} />
+      <MangaChapters id={id.manga} />
     </>
   );
 };

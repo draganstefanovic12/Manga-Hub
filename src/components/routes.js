@@ -9,7 +9,7 @@ const BrowserRoutes = () => {
       <Routes>
         <Route to="/" index element={<MainSite />}></Route>
         <Route path="/:name" element={<Search />}></Route>
-        <Route path="/:manga" element={<Manga />}></Route>
+        <Route path="/manga/:manga" element={<Manga />}></Route>
       </Routes>
     </BrowserRouter>
   );

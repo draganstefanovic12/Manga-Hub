@@ -1,36 +1,38 @@
 import useFetch from "./useFetch";
 import "../styles/Search.css";
 import Header from "./Header";
-import { Link, useParams } from "react-router-dom";
-import { link1, link2 } from "./fetchLinks";
+import { useParams, Link } from "react-router-dom";
+import { searchLink1, searchLink2 } from "./fetchLinks";
 
 const Search = () => {
   const title = useParams();
-
-  const mangas = useFetch(`${link1}${title.name}${link2}`);
-  mangas && console.log(mangas.data.data);
+  const mangas = useFetch(`${searchLink1}${title.name}${searchLink2}`);
 
   return (
     <>
       <Header />
       {mangas && (
-        <div>
+        <div className="grid">
           {mangas.data.data.map((manga) => (
-            <div key={manga.id} className="searchBox">
-              <h1 className="mangaName">{manga.attributes.title.en}</h1>
+            <div key={manga.id} className="search-box">
+              <Link className="manga-name" to={`/manga/${manga.id}`}>
+                <h1>{manga.attributes.title.en}</h1>
+              </Link>
               {manga.relationships
                 .filter((mango) => mango.type === "cover_art")
                 .map((mango) => (
                   <img
                     key={mango.id}
-                    className="searchCover"
+                    className="search-cover"
                     src={`https://uploads.mangadex.org/covers/${manga.id}/${mango.attributes.fileName}`}
                     alt=""
                   />
                 ))}
               <p className="desc">{manga.attributes.description.en}</p>
-              {manga.attributes.year && (
+              {manga.attributes.year ? (
                 <p>Release year: {manga.attributes.year}</p>
+              ) : (
+                <p>Release year: N/A </p>
               )}
               <p>Status: {manga.attributes.status}</p>
             </div>

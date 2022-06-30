@@ -4,7 +4,7 @@ import Input from "./Input";
 
 const Header = () => {
   return (
-    <header>
+    <header className="header">
       <Link to="/" className="welcome">
         Simple manga
       </Link>

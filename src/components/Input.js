@@ -1,12 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Input = () => {
   const [search, setSearch] = useState("");
 
+  const navigate = useNavigate();
+  function handleKey(e) {
+    e.key === "Enter" && navigate(`/${search}`);
+  }
+
   return (
     <div className="links">
       <input
+        onKeyUp={(e) => handleKey(e)}
         type="search"
         onChange={(e) => setSearch(e.target.value)}
         className="search"
