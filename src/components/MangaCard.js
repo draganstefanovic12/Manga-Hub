@@ -6,8 +6,6 @@ const MangaCard = ({ id }) => {
   const info = useFetch(`${idLink}${id}`);
   const cover = useFetch(`${coverLink1}${id}${coverLink2}`);
 
-  // info && console.log(info);
-
   return (
     <>
       <div className="big-container">

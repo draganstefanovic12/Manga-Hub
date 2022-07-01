@@ -98,3 +98,13 @@
 .select-chapter > * {
     color: black;
 }
+
+.chapter {
+    display: grid;
+    justify-content: center;
+}
+
+.chapter > img {
+    width: auto;
+    justify-self: center;
+}

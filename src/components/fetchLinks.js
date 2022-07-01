@@ -10,4 +10,18 @@ const coverLink2 =
 //manga link to get the info to display on site
 const idLink = "https://api.mangadex.org/manga/";
 
-export { searchLink1, searchLink2, coverLink1, coverLink2, idLink };
+//fetching chapters with the link below
+const chLink = "https://api.mangadex.org/manga/";
+
+//fetching chapter images
+const imgLink = "https://api.mangadex.org/at-home/server/";
+
+export {
+  searchLink1,
+  searchLink2,
+  coverLink1,
+  coverLink2,
+  idLink,
+  chLink,
+  imgLink,
+};
