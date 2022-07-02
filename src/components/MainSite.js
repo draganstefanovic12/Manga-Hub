@@ -1,12 +1,14 @@
 import "../styles/MainSite.css";
 import Header from "./Header";
-import Recommended from "./Recommended";
+import RecentUpdates from "./RecentUpdates";
+import TopRated from "./TopRated";
 
 export default function MainSite() {
   return (
     <>
       <Header />
-      <Recommended />
+      <TopRated />
+      <RecentUpdates />
     </>
   );
 }

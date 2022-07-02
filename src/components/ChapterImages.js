@@ -8,7 +8,6 @@ const ChapterImages = ({ id }) => {
   async function handleChapterImages(url) {
     const data = await axios.get(`${imgLink}${url}?forcePort443=false`);
     setData(data);
-    console.log(data.data.chapter);
   }
 
   useEffect(() => {
@@ -20,6 +19,7 @@ const ChapterImages = ({ id }) => {
       {data &&
         data.data.chapter.data.map((img) => (
           <img
+            key={img}
             src={`https://uploads.mangadex.org/data/${data.data.chapter.hash}/${img}`}
             alt=""
           />

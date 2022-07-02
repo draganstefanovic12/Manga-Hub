@@ -1,6 +1,6 @@
 import useFetch from "./useFetch";
-import "../styles/Search.css";
 import Header from "./Header";
+import "../styles/Search.css";
 import { useParams, Link } from "react-router-dom";
 import { searchLink1, searchLink2 } from "./fetchLinks";
 
@@ -24,7 +24,7 @@ const Search = () => {
                   <img
                     key={mango.id}
                     className="search-cover"
-                    src={`https://uploads.mangadex.org/covers/${manga.id}/${mango.attributes.fileName}`}
+                    src={`https://uploads.mangadex.org/covers/${manga.id}/${mango.attributes.fileName}.256.jpg`}
                     alt=""
                   />
                 ))}

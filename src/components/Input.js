@@ -14,7 +14,7 @@ const Input = () => {
       <input
         onKeyUp={(e) => handleKey(e)}
         type="search"
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => setSearch(`title=${e.target.value}`)}
         className="search"
       />
       <Link className="link-search" to={`/${search}`}>

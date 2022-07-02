@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import ChapterImages from "./ChapterImages";
+import { useEffect, useState, useRef } from "react";
 import { chLink } from "./fetchLinks";
+import ChapterImages from "./ChapterImages";
 import useFetch from "./useFetch";
 
 const MangaChapters = ({ id }) => {
@@ -20,6 +20,13 @@ const MangaChapters = ({ id }) => {
     setChapt(chapters);
   }
 
+  //using ref to focus the select and change chapters
+  const selectRef = useRef(null);
+
+  function handleChapterChange() {
+    selectRef.current.focus();
+  }
+
   //using getchapters as a dependency otherwise the function would run on every render
   useEffect(() => {
     getChapters && handleChapters();
@@ -30,7 +37,10 @@ const MangaChapters = ({ id }) => {
       <div className="select-center">
         <h3>Chapter: </h3>
         <select
-          onChange={(e) => setChaptId(e.target.value)}
+          ref={selectRef}
+          onChange={(e) => {
+            setChaptId(e.target.value);
+          }}
           className="select-chapter"
         >
           <option className="default-chapter">Select a chapter</option>
@@ -47,10 +57,13 @@ const MangaChapters = ({ id }) => {
         </select>
       </div>
       <ChapterImages id={chaptId} />
+      {chaptId && (
+        <button className="endBtn" onClick={handleChapterChange}>
+          Return to top
+        </button>
+      )}
     </>
   );
 };
 
 export default MangaChapters;
-
-// end my fucking existence

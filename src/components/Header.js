@@ -1,12 +1,12 @@
 import "../styles/Header.css";
-import { Link } from "react-router-dom";
 import Input from "./Input";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="header">
       <Link to="/" className="welcome">
-        Simple manga
+        Manga
       </Link>
       <Input />
     </header>
