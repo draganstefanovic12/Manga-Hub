@@ -15,11 +15,6 @@ body {
   background-color: #191C25;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-}
-
 .main-img {
   height: 300px;
 }

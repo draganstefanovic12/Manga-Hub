@@ -16,6 +16,9 @@ const Search = () => {
           {mangas.data.data.map((manga) => (
             <div key={manga.id} className="search-box">
               <Link className="manga-name" to={`/manga/${manga.id}`}>
+                {!manga.attributes.title.en && (
+                  <h1>{manga.attributes.title.ja}</h1>
+                )}
                 <h1>{manga.attributes.title.en}</h1>
               </Link>
               {manga.relationships

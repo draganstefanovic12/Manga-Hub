@@ -1,19 +1,20 @@
 .search-box {
     display: grid;
     margin: 0 auto;
-    grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
-    grid-template-columns: 325px 200px 275px;
+    grid-template-rows: 30px 30px;
+    grid-template-columns: 200px 149px 275px;
     width: auto;
-    height: 425px;
+    height: 256px;
     margin-top: 3em;
     animation: manga 500ms 1 ease-in-out forwards;
     background-color: #1B2430;
+    overflow: hidden;
 }
 
 .grid {
     display: grid;
     margin: 0 auto;
-    grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(634px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
 }
 
@@ -29,6 +30,11 @@
     overflow: hidden;
     grid-row: 3;
     padding-right: 10px;
+    margin-top: 0;
+}
+
+.search-box > p {
+    margin: 0;
 }
 
 @keyframes manga {
@@ -41,15 +47,21 @@
 
 .search-cover {
     grid-row: 1 / 5;
-    width: 300px;
-    height: 425px;
+    width: 182px;
+    height: 256px;
 }
 
 .manga-name {
     font-weight: 400;
-    margin-bottom: 10px;
     font-size: 1em;
     grid-column: 2 / 4;
+    overflow: hidden;
+}
+
+.manga-name > h1 {
+    font-size: 20px;
+    margin: 0;
+    margin-top: 5px;
 }
 
 .manga-name:hover, .search-cover:hover {
