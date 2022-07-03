@@ -4,13 +4,23 @@ import axios from "axios";
 const useFetch = (url) => {
   const [data, setData] = useState(null);
 
-  async function handleData(url) {
-    const data = await axios.get(url);
+  async function handleData(url, abortCont) {
+    const data = await axios
+      .get(url, { signal: abortCont.signal })
+      .catch((err) => {
+        if (err.name === "AbortError") {
+          console.log("aborted");
+        } else {
+          console.log(err.message);
+        }
+      });
     setData(data);
   }
 
   useEffect(() => {
-    handleData(url);
+    const abortCont = new AbortController();
+    handleData(url, abortCont);
+    return () => abortCont.abort();
   }, [url]);
   return data;
 };

@@ -1,43 +1,59 @@
-import { coverLink1, coverLink2, idLink } from "./fetchLinks";
+import { idLink } from "./fetchLinks";
 import Tags from "./Tags";
 import useFetch from "./useFetch";
+import { yotsu1, yotsu2, yotsu3, yotsu4, yotsu5 } from "./yotsubaImg";
 
 const MangaCard = ({ id }) => {
-  const info = useFetch(`${idLink}${id}`);
-  const cover = useFetch(`${coverLink1}${id}${coverLink2}`);
+  const info = useFetch(
+    `${idLink}${id}?includes%5B%5D=author&includes%5B%5D=artist&includes%5B%5D=cover_art`
+  );
 
   return (
     <>
       <div className="big-container">
-        {cover && (
-          <img
-            className="manga-img"
-            src={`https://uploads.mangadex.org/covers/${id}/${cover.data.data[0].attributes.fileName}`}
-            alt="hi"
-          />
-        )}
+        {info &&
+          info.data.data.relationships
+            .filter((img) => img.type === "cover_art")
+            .map((img) => (
+              <img
+                className="manga-img"
+                src={`https://uploads.mangadex.org/covers/${id}/${img.attributes.fileName}`}
+                alt="hi"
+              />
+            ))}
         <div className="cover">
+          <div className="author">
+            <h3>Author: </h3>
+            {info &&
+              info.data.data.relationships
+                .filter((author) => author.type === "author")
+                .map((name) => (
+                  <h3 className="author-name">{name.attributes.name}</h3>
+                ))}
+          </div>
           {info && (
             <>
-              <div>
-                <h1 className="name">{info.data.data.attributes.title.en}</h1>
-                {info.data.data.attributes.year && (
-                  <h3 className="release-year">
-                    Release date: {info.data.data.attributes.year}
-                  </h3>
-                )}
-              </div>
+              <h1 className="name">{info.data.data.attributes.title.en}</h1>
+              {info.data.data.attributes.year && (
+                <h3 className="release-year">
+                  Release date: {info.data.data.attributes.year}
+                </h3>
+              )}
               <p className="manga-desc">
                 {info.data.data.attributes.description.en}
               </p>
               <div className="manga-info">
-                <p className="status">{info.data.data.attributes.status}</p>
-                {info.data.data.attributes.publicationDemographic && (
-                  <p className="demographic">
-                    {info.data.data.attributes.publicationDemographic}
-                  </p>
-                )}
+                <h3 className="status-demographic">Status: </h3>
+                <h3 className="status">{info.data.data.attributes.status}</h3>
               </div>
+              {info.data.data.attributes.publicationDemographic && (
+                <div className="demographic-div">
+                  <h3 className="status-demographic">Demographic: </h3>
+                  <h3 className="demographic">
+                    {info.data.data.attributes.publicationDemographic}
+                  </h3>
+                </div>
+              )}
             </>
           )}
         </div>

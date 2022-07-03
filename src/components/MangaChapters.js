@@ -34,7 +34,7 @@ const MangaChapters = ({ id }) => {
 
   return (
     <>
-      <div className="select-center">
+      <div className="select">
         <h3>Chapter: </h3>
         <select
           ref={selectRef}
