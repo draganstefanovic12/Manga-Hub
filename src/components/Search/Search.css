@@ -68,29 +68,9 @@
     cursor: pointer;
 }
 
-.btn-cont {
+.pagination-cont {
     display: flex;
     justify-content: center;
-}
-
-.btn {
-    display: flex;
-    margin: 0 auto;
-    width: 120px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #1B2430;
-    animation: container 3000ms ease-in-out 1 forwards;
-}
-
-.btn:hover {
-    background-color: #253040;
-}
-
-.btn:disabled {
-    border: none;
-    background-color: #666;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

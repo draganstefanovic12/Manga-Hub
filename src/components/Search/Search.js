@@ -4,7 +4,7 @@ import { search1, search2 } from "../fetchLinks";
 import useFetch from "../useFetch";
 import Header from "../Header/Header";
 import SearchCards from "./SearchCards";
-import Button from "./Button";
+import SearchPagination from "./SearchPagination";
 import "./Search.css";
 
 const Search = () => {
@@ -16,7 +16,7 @@ const Search = () => {
     <>
       <Header />
       <SearchCards mangas={mangas} />
-      <Button mangas={mangas} offset={offset} setOffset={setOffset} />
+      <SearchPagination mangas={mangas} offset={offset} setOffset={setOffset} />
     </>
   );
 };
