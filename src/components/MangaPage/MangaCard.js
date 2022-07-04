@@ -6,7 +6,7 @@ import MangaTags from "./MangaTags";
 import MangaInfo from "./MangaInfo";
 
 const MangaCard = ({ id }) => {
-  const info = useFetch(`${getId}${id}${getId2}`);
+  const manga = useFetch(`${getId}${id}${getId2}`);
 
   //putting random img number in useRef to avoid rerendering the img on page load
   const random = useRef(Math.floor(Math.random() * yotsu.length));
@@ -14,8 +14,8 @@ const MangaCard = ({ id }) => {
   return (
     <>
       <div className="big-container">
-        {info &&
-          info.data.data.relationships
+        {manga &&
+          manga.data.data.relationships
             .filter((img) => img.type === "cover_art")
             .map((img) => (
               <img
@@ -26,8 +26,8 @@ const MangaCard = ({ id }) => {
               />
             ))}
         <img className="random-bg" src={yotsu[random.current]} alt="bg" />
-        {info && <MangaInfo manga={info} />}
-        <MangaTags id={info} />
+        {manga && <MangaInfo manga={manga} />}
+        <MangaTags id={manga} />
       </div>
     </>
   );

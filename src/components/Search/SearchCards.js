@@ -16,12 +16,17 @@ const SearchCards = ({ mangas }) => {
               {manga.relationships
                 .filter((mango) => mango.type === "cover_art")
                 .map((mango) => (
-                  <img
-                    key={mango.id}
+                  <Link
+                    key={manga.id}
                     className="search-cover"
-                    src={`https://uploads.mangadex.org/covers/${manga.id}/${mango.attributes.fileName}.256.jpg`}
-                    alt="cover"
-                  />
+                    to={`/manga/${manga.id}`}
+                  >
+                    <img
+                      className="search-cover"
+                      src={`https://uploads.mangadex.org/covers/${manga.id}/${mango.attributes.fileName}.256.jpg`}
+                      alt="cover"
+                    />
+                  </Link>
                 ))}
               <p className="desc">{manga.attributes.description.en}</p>
               {manga.attributes.year ? (

@@ -1,5 +1,5 @@
 import useFetch from "../useFetch";
-import { recentUpdates, showMoreLatest } from "../fetchLinks";
+import { recentUpdates, showMoreRecentUpdates } from "../fetchLinks";
 import { Link } from "react-router-dom";
 import MainCover from "./MainCover";
 
@@ -9,7 +9,7 @@ const MainRecentUpdates = () => {
   return (
     <>
       <section className="section">
-        <Link className="link-recent" to={`/${showMoreLatest}`}>
+        <Link className="link-recent" to={`/${showMoreRecentUpdates}`}>
           <h1 className="section-text">Recently updated</h1>
         </Link>
         <div className="section-cover-cont">

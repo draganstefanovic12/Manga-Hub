@@ -13,7 +13,7 @@ const MainCover = ({ data }) => {
                   <img
                     className="main-img"
                     src={`https://uploads.mangadex.org/covers/${manga.id}/${image.attributes.fileName}.256.jpg`}
-                    alt=""
+                    alt="cover"
                   />
                 </Link>
               </div>

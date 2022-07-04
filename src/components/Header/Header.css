@@ -21,7 +21,8 @@
       transform: translateY(0%);
     }
   }
-  
+
+  /* input component css */
   .search {
     display: grid;
     align-self: center;
