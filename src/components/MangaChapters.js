@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { chLink } from "./fetchLinks";
+import { ch } from "./fetchLinks";
 import ChapterImages from "./ChapterImages";
 import useFetch from "./useFetch";
 
@@ -8,7 +8,7 @@ const MangaChapters = ({ id }) => {
   const [chaptId, setChaptId] = useState(null);
 
   const getChapters = useFetch(
-    `${chLink}${id}/aggregate?translatedLanguage%5B%5D=en`
+    `${ch}${id}/aggregate?translatedLanguage%5B%5D=en`
   );
 
   function handleChapters() {
@@ -20,17 +20,17 @@ const MangaChapters = ({ id }) => {
     setChapt(chapters);
   }
 
-  //using ref to focus the select and change chapters
-  const selectRef = useRef(null);
-
-  function handleChapterChange() {
-    selectRef.current.focus();
-  }
-
   //using getchapters as a dependency otherwise the function would run on every render
   useEffect(() => {
     getChapters && handleChapters();
   }, [getChapters]);
+
+  //using ref to focus the select and change chapters
+  const selectRef = useRef(null);
+
+  function handleReturnToTop() {
+    selectRef.current.focus();
+  }
 
   return (
     <>
@@ -58,7 +58,7 @@ const MangaChapters = ({ id }) => {
       </div>
       <ChapterImages id={chaptId} />
       {chaptId && (
-        <button className="endBtn" onClick={handleChapterChange}>
+        <button className="return-to-top" onClick={handleReturnToTop}>
           Return to top
         </button>
       )}

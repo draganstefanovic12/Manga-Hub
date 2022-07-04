@@ -8,12 +8,13 @@ const useFetch = (url) => {
     const data = await axios
       .get(url, { signal: abortCont.signal })
       .catch((err) => {
-        if (err.name === "AbortError") {
-          console.log("aborted");
-        } else {
-          console.log(err.message);
+        if (err.message === "CanceledError") {
+          console.log("hello");
+        } else if (err.message === "TypeError") {
+          return;
         }
       });
+
     setData(data);
   }
 
@@ -26,5 +27,3 @@ const useFetch = (url) => {
 };
 
 export default useFetch;
-
-//mb try getting the img aswell

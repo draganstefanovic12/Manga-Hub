@@ -1,13 +1,13 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { imgLink } from "./fetchLinks";
+import { img } from "./fetchLinks";
+import axios from "axios";
 
 const ChapterImages = ({ id }) => {
   const [data, setData] = useState(null);
 
   async function handleChapterImages(url) {
-    const data = await axios.get(`${imgLink}${url}?forcePort443=false`);
-    setData(data);
+    const data = await axios.get(`${img}${url}?forcePort443=false`);
+    setData(data.data);
   }
 
   useEffect(() => {
@@ -17,10 +17,10 @@ const ChapterImages = ({ id }) => {
   return (
     <div className="chapter">
       {data &&
-        data.data.chapter.data.map((img) => (
+        data.chapter.dataSaver.map((img) => (
           <img
             key={img}
-            src={`https://uploads.mangadex.org/data/${data.data.chapter.hash}/${img}`}
+            src={`https://uploads.mangadex.org/data-saver/${data.chapter.hash}/${img}`}
             alt=""
           />
         ))}

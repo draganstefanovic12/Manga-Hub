@@ -1,20 +1,19 @@
 import useFetch from "./useFetch";
-import { top50, showMoreTop50 } from "./fetchLinks";
+import { topRated, showMoreTopRated } from "./fetchLinks";
 import { Link } from "react-router-dom";
 import ShowCoversMap from "./ShowCoversMap";
 
 const TopRated = () => {
-  const topRated = useFetch(top50);
+  const top = useFetch(topRated);
 
   return (
     <section className="section">
-      <h1 className="section-text">Top rated</h1>
-      <div className="section-cover-cont">
-        <ShowCoversMap data={topRated} />
-      </div>
-      <Link className="show-more" to={`/${showMoreTop50}`}>
-        <h3 style={{ margin: "0px" }}>Show More</h3>
+      <Link className="link" to={`/${showMoreTopRated}`}>
+        <h1 className="section-text">Top rated</h1>
       </Link>
+      <div className="section-cover-cont">
+        <ShowCoversMap data={top} />
+      </div>
     </section>
   );
 };

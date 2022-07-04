@@ -1,19 +1,19 @@
+import { useParams, Link } from "react-router-dom";
+import { search1, search2 } from "./fetchLinks";
 import useFetch from "./useFetch";
 import Header from "./Header";
 import "../styles/Search.css";
-import { useParams, Link } from "react-router-dom";
-import { searchLink1, searchLink2 } from "./fetchLinks";
 
 const Search = () => {
   const title = useParams();
-  const mangas = useFetch(`${searchLink1}${title.name}${searchLink2}`);
+  const mangas = useFetch(`${search1}${title.name}${search2}`);
 
   return (
     <>
       <Header />
       {mangas && (
         <div className="grid">
-          {mangas.data.data.map((manga) => (
+          {mangas.data.map((manga) => (
             <div key={manga.id} className="search-box">
               <Link className="manga-name" to={`/manga/${manga.id}`}>
                 {!manga.attributes.title.en && (
@@ -28,7 +28,7 @@ const Search = () => {
                     key={mango.id}
                     className="search-cover"
                     src={`https://uploads.mangadex.org/covers/${manga.id}/${mango.attributes.fileName}.256.jpg`}
-                    alt=""
+                    alt="cover"
                   />
                 ))}
               <p className="desc">{manga.attributes.description.en}</p>
