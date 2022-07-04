@@ -1,6 +1,6 @@
 const search1 = "https://api.mangadex.org/manga?";
 const search2 =
-  "&includedTagsMode=AND&excludedTagsMode=OR&contentRating%5B%5D=safe&excludedOriginalLanguage%5B%5D=ko&excludedOriginalLanguage%5B%5D=zh&contentRating%5B%5D=suggestive&includes%5B%5D=manga&includes%5B%5D=chapter&includes%5B%5D=cover_art&includes%5B%5D=tag&includes%5B%5D=user&excludedTags%5B%5D=5920b825-4181-4a17-beeb-9918b0ff7a30&excludedTags%5B%5D=b13b2a48-c720-44a9-9c77-39c9979373fb&order%5Brating%5D=desc&limit=16";
+  "&includedTagsMode=AND&excludedTagsMode=OR&contentRating%5B%5D=safe&excludedOriginalLanguage%5B%5D=ko&excludedOriginalLanguage%5B%5D=zh&contentRating%5B%5D=suggestive&includes%5B%5D=manga&includes%5B%5D=chapter&includes%5B%5D=cover_art&includes%5B%5D=tag&includes%5B%5D=user&excludedTags%5B%5D=5920b825-4181-4a17-beeb-9918b0ff7a30&excludedTags%5B%5D=b13b2a48-c720-44a9-9c77-39c9979373fb&order%5Brating%5D=desc&limit=12";
 
 //manga  to get the info to display on site
 const getId = "https://api.mangadex.org/manga/";
