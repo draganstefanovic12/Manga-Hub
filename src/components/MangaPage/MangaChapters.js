@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
-import { ch } from "./fetchLinks";
-import ChapterImages from "./ChapterImages";
-import useFetch from "./useFetch";
+import { ch } from "../fetchLinks";
+import useFetch from "../useFetch";
+import MangaChapterImages from "./MangaChapterImages";
 
 const MangaChapters = ({ id }) => {
   const [chapt, setChapt] = useState("");
@@ -56,7 +56,7 @@ const MangaChapters = ({ id }) => {
           )}
         </select>
       </div>
-      <ChapterImages id={chaptId} />
+      <MangaChapterImages id={chaptId} />
       {chaptId && (
         <button className="return-to-top" onClick={handleReturnToTop}>
           Return to top

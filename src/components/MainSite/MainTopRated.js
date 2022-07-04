@@ -1,9 +1,9 @@
-import useFetch from "./useFetch";
-import { topRated, showMoreTopRated } from "./fetchLinks";
+import useFetch from "../useFetch";
+import { topRated, showMoreTopRated } from "../fetchLinks";
 import { Link } from "react-router-dom";
-import ShowCoversMap from "./ShowCoversMap";
+import MainCover from "./MainCover";
 
-const TopRated = () => {
+const MainTopRated = () => {
   const top = useFetch(topRated);
 
   return (
@@ -12,10 +12,10 @@ const TopRated = () => {
         <h1 className="section-text">Top rated</h1>
       </Link>
       <div className="section-cover-cont">
-        <ShowCoversMap data={top} />
+        <MainCover data={top} />
       </div>
     </section>
   );
 };
 
-export default TopRated;
+export default MainTopRated;

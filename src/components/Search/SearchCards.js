@@ -1,19 +1,11 @@
-import { useParams, Link } from "react-router-dom";
-import { search1, search2 } from "./fetchLinks";
-import useFetch from "./useFetch";
-import Header from "./Header";
-import "../styles/Search.css";
+import { Link } from "react-router-dom";
 
-const Search = () => {
-  const title = useParams();
-  const mangas = useFetch(`${search1}${title.name}${search2}`);
-
+const SearchCards = ({ mangas }) => {
   return (
     <>
-      <Header />
       {mangas && (
         <div className="grid">
-          {mangas.data.map((manga) => (
+          {mangas.data.data.map((manga) => (
             <div key={manga.id} className="search-box">
               <Link className="manga-name" to={`/manga/${manga.id}`}>
                 {!manga.attributes.title.en && (
@@ -46,4 +38,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchCards;

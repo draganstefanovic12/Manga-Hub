@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ShowCoversMap = ({ data }) => {
+const MainCover = ({ data }) => {
   return (
     <>
       {data &&
@@ -23,4 +23,4 @@ const ShowCoversMap = ({ data }) => {
   );
 };
 
-export default ShowCoversMap;
+export default MainCover;

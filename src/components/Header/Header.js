@@ -1,5 +1,5 @@
-import "../styles/Header.css";
-import Input from "./Input";
+import "./Header.css";
+import Input from "../Input/Input";
 import { Link } from "react-router-dom";
 
 const Header = () => {

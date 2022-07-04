@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { img } from "./fetchLinks";
+import { img } from "../fetchLinks";
 import axios from "axios";
 
-const ChapterImages = ({ id }) => {
+const MangaChapterImages = ({ id }) => {
   const [data, setData] = useState(null);
 
   async function handleChapterImages(url) {
@@ -21,11 +21,11 @@ const ChapterImages = ({ id }) => {
           <img
             key={img}
             src={`https://uploads.mangadex.org/data-saver/${data.chapter.hash}/${img}`}
-            alt=""
+            alt="manga-page"
           />
         ))}
     </div>
   );
 };
 
-export default ChapterImages;
+export default MangaChapterImages;

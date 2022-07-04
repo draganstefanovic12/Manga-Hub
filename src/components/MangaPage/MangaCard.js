@@ -1,8 +1,8 @@
-import { yotsu } from "./yotsubaImg";
-import { getId, getId2 } from "./fetchLinks";
+import { yotsu } from "../yotsubaImg";
+import { getId, getId2 } from "../fetchLinks";
 import { useRef } from "react";
-import Tags from "./Tags";
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
+import MangaTags from "./MangaTags";
 import MangaInfo from "./MangaInfo";
 
 const MangaCard = ({ id }) => {
@@ -11,7 +11,6 @@ const MangaCard = ({ id }) => {
   //putting random img number in useRef to avoid rerendering the img on page load
   const random = useRef(Math.floor(Math.random() * yotsu.length));
 
-  //this could use some rewriting to be prettier.
   return (
     <>
       <div className="big-container">
@@ -28,7 +27,7 @@ const MangaCard = ({ id }) => {
             ))}
         <img className="random-bg" src={yotsu[random.current]} alt="bg" />
         {info && <MangaInfo manga={info} />}
-        <Tags id={info} />
+        <MangaTags id={info} />
       </div>
     </>
   );

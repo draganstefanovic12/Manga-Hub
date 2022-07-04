@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import Header from "./Header";
+import Header from "../Header/Header";
 import MangaChapters from "./MangaChapters";
 import MangaCard from "./MangaCard";
-import "../styles/Manga.css";
+import "./Manga.css";
 
 const Manga = () => {
   const id = useParams();

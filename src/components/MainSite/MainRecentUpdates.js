@@ -1,10 +1,10 @@
-import useFetch from "./useFetch";
-import { latestUpdates, showMoreLatest } from "./fetchLinks";
+import useFetch from "../useFetch";
+import { recentUpdates, showMoreLatest } from "../fetchLinks";
 import { Link } from "react-router-dom";
-import ShowCoversMap from "./ShowCoversMap";
+import MainCover from "./MainCover";
 
-const RecentUpdates = () => {
-  const updated = useFetch(latestUpdates);
+const MainRecentUpdates = () => {
+  const updated = useFetch(recentUpdates);
 
   return (
     <>
@@ -13,11 +13,11 @@ const RecentUpdates = () => {
           <h1 className="section-text">Recently updated</h1>
         </Link>
         <div className="section-cover-cont">
-          <ShowCoversMap data={updated} />
+          <MainCover data={updated} />
         </div>
       </section>
     </>
   );
 };
 
-export default RecentUpdates;
+export default MainRecentUpdates;

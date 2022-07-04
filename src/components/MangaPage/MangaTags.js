@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { search2 } from "./fetchLinks";
+import { search2 } from "../fetchLinks";
 
-const Tags = ({ id }) => {
+const MangaTags = ({ id }) => {
   return (
     <div className="tags">
       {id &&
@@ -19,6 +19,6 @@ const Tags = ({ id }) => {
   );
 };
 
-export default Tags;
+export default MangaTags;
 
 //includedTags%5B%5D=
