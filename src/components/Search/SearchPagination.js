@@ -1,8 +1,9 @@
 import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
+import { useNavigate } from "react-router-dom";
 import "./Search.css";
 
-const SearchPagination = ({ mangas, setOffset }) => {
+const SearchPagination = ({ mangas, title }) => {
   //can't go over 10,000
   let results;
   function handleResults() {
@@ -14,14 +15,19 @@ const SearchPagination = ({ mangas, setOffset }) => {
   }
   mangas && handleResults();
 
+  const navigate = useNavigate();
+
   return (
     <>
       {mangas && (
         <Pagination
           hideNextButton={true}
           hidePrevButton={true}
+          page={parseInt(title.page)}
           className="pagination-cont"
-          onChange={(e) => setOffset(parseInt(e.target.textContent - 1) * 12)}
+          onChange={(e) => {
+            navigate(`/${title.name}/${e.target.textContent}`);
+          }}
           count={Math.floor(results / 12)}
           variant={"outlined"}
           shape={"rounded"}

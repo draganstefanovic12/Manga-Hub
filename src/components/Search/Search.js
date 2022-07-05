@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
 import { search1, search2 } from "../fetchLinks";
 import useFetch from "../useFetch";
 import Header from "../Header/Header";
@@ -9,14 +8,17 @@ import "./Search.css";
 
 const Search = () => {
   const title = useParams();
-  const [offset, setOffset] = useState(0);
-  const mangas = useFetch(`${search1}${title.name}${search2}&offset=${offset}`);
+  const mangas = useFetch(
+    `${search1}${title.name}${search2}&offset=${parseInt(
+      (title.page - 1) * 12
+    )}`
+  );
 
   return (
     <>
       <Header />
       <SearchCards mangas={mangas} />
-      <SearchPagination mangas={mangas} offset={offset} setOffset={setOffset} />
+      <SearchPagination mangas={mangas} title={title} />
     </>
   );
 };

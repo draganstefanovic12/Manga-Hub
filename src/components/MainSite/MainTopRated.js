@@ -8,7 +8,7 @@ const MainTopRated = () => {
 
   return (
     <section className="section">
-      <Link className="link" to={`/${showMoreTopRated}`}>
+      <Link className="link" to={`/${showMoreTopRated}/1`}>
         <h1 className="section-text">Top rated</h1>
       </Link>
       <div className="section-cover-cont">

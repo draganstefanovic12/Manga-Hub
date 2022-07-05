@@ -7,6 +7,7 @@ import MangaInfo from "./MangaInfo";
 
 const MangaCard = ({ id }) => {
   const manga = useFetch(`${getId}${id}${getId2}`);
+  manga && console.log(manga);
 
   //putting random img number in useRef to avoid rerendering the img on page load
   const random = useRef(Math.floor(Math.random() * yotsu.length));
