@@ -3,6 +3,7 @@ import PaginationItem from "@mui/material/PaginationItem";
 import "./Search.css";
 
 const SearchPagination = ({ mangas, setOffset }) => {
+  //can't go over 10,000
   let results;
   function handleResults() {
     if (mangas.data.total > 9999) {
@@ -20,7 +21,7 @@ const SearchPagination = ({ mangas, setOffset }) => {
           hideNextButton={true}
           hidePrevButton={true}
           className="pagination-cont"
-          onChange={(e) => setOffset(parseInt(e.target.textContent) * 12)}
+          onChange={(e) => setOffset(parseInt(e.target.textContent - 1) * 12)}
           count={Math.floor(results / 12)}
           variant={"outlined"}
           shape={"rounded"}

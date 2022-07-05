@@ -6,7 +6,7 @@ const Input = () => {
 
   const navigate = useNavigate();
   function handleKey(e) {
-    e.key === "Enter" && navigate(`/${search}`);
+    e.key === "Enter" && navigate(`/${search}/1`);
   }
 
   return (
@@ -17,7 +17,7 @@ const Input = () => {
         onChange={(e) => setSearch(`title=${e.target.value}`)}
         className="search"
       />
-      <Link className="link-search" to={`/${search}`}>
+      <Link className="link-search" to={`/${search}/1`}>
         <button className="btn-search">Search</button>
       </Link>
     </div>

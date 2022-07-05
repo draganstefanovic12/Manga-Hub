@@ -8,8 +8,8 @@ import SearchPagination from "./SearchPagination";
 import "./Search.css";
 
 const Search = () => {
-  const [offset, setOffset] = useState(0);
   const title = useParams();
+  const [offset, setOffset] = useState(0);
   const mangas = useFetch(`${search1}${title.name}${search2}&offset=${offset}`);
 
   return (

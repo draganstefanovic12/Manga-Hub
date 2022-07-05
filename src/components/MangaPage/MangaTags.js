@@ -9,7 +9,7 @@ const MangaTags = ({ id }) => {
           <p key={tag.attributes.name.en} className="tag">
             <Link
               className="link-tag"
-              to={`/includedTags%5B%5D=${tag.id}${search2}`}
+              to={`/includedTags%5B%5D=${tag.id}${search2}/1`}
             >
               {tag.attributes.name.en}
             </Link>
