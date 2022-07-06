@@ -4,8 +4,8 @@ import useFetch from "../useFetch";
 import Header from "../Header/Header";
 import SearchCards from "./SearchCards";
 import SearchPagination from "./SearchPagination";
-import "./Search.css";
 import SearchAdvanced from "./SearchAdvanced";
+import "./Search.css";
 
 const Search = () => {
   const title = useParams();

@@ -6,7 +6,6 @@ import "./Manga.css";
 
 const Manga = () => {
   const id = useParams();
-
   return (
     <>
       <Header />

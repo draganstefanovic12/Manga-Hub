@@ -78,3 +78,7 @@
 .form {
     width: 150px;
 }
+
+.form-genre {
+    width: auto;
+}

@@ -9,7 +9,7 @@ const MainCover = ({ data }) => {
           manga.relationships
             .filter((data) => data.type === "cover_art")
             .map((image) => (
-              <Link to={`/manga/${manga.id}`}>
+              <Link key={image} to={`/manga/${manga.id}`}>
                 <img
                   className="main-img"
                   src={`https://uploads.mangadex.org/covers/${manga.id}/${image.attributes.fileName}.256.jpg`}
