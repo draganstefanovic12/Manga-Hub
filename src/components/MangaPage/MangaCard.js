@@ -22,7 +22,7 @@ const MangaCard = ({ id }) => {
                 key={img.attributes.fileName}
                 className="manga-img"
                 src={`https://uploads.mangadex.org/covers/${id}/${img.attributes.fileName}.256.jpg`}
-                alt="hi"
+                alt="cover"
               />
             ))}
         <img className="random-bg" src={yotsu[random.current]} alt="bg" />

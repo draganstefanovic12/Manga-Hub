@@ -42,6 +42,10 @@
     border: none;
   }
 
+  .btn-search:disabled {
+    background-color: #666;
+  }
+
   .link-search {
     display: flex;
     align-self: center;

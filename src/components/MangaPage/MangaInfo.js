@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const MangaInfo = ({ manga }) => {
   return (
     <div className="cover">
@@ -7,9 +9,13 @@ const MangaInfo = ({ manga }) => {
           manga.data.data.relationships
             .filter((data) => data.type === "author")
             .map((author) => (
-              <h3 key={author.attributes.name} className="author-name">
-                {author.attributes.name}
-              </h3>
+              <Link
+                key={author.attributes.name}
+                className="author-name"
+                to={`/author/${author.id}`}
+              >
+                <h3>{author.attributes.name}</h3>
+              </Link>
             ))}
       </div>
       {manga && (

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const MainCover = ({ data }) => {
+  data && console.log(data);
   return (
     <>
       {data &&
@@ -8,15 +9,14 @@ const MainCover = ({ data }) => {
           manga.relationships
             .filter((data) => data.type === "cover_art")
             .map((image) => (
-              <div key={manga.id} className="card">
-                <Link to={`/manga/${manga.id}`}>
-                  <img
-                    className="main-img"
-                    src={`https://uploads.mangadex.org/covers/${manga.id}/${image.attributes.fileName}.256.jpg`}
-                    alt="cover"
-                  />
-                </Link>
-              </div>
+              <Link to={`/manga/${manga.id}`}>
+                <img
+                  className="main-img"
+                  src={`https://uploads.mangadex.org/covers/${manga.id}/${image.attributes.fileName}.256.jpg`}
+                  alt="cover"
+                />
+                <p className="main-name">{manga.attributes.title.en}</p>
+              </Link>
             ))
         )}
     </>

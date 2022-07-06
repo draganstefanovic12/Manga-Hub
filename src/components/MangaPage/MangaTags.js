@@ -20,5 +20,3 @@ const MangaTags = ({ id }) => {
 };
 
 export default MangaTags;
-
-//includedTags%5B%5D=

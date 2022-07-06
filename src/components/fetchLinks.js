@@ -23,6 +23,9 @@ const recentUpdates =
 
 const showMoreRecentUpdates = "order%5BlatestUploadedChapter%5D=desc";
 
+const authorMangas =
+  "https://api.mangadex.org/manga?limit=32&offset=0&includes[]=cover_art&includes[]=author&includes[]=artist&contentRating[]=safe&contentRating[]=suggestive&contentRating[]=erotica&contentRating[]=pornographic&order[followedCount]=desc&authors[]=";
+
 export {
   search1,
   search2,
@@ -34,4 +37,5 @@ export {
   showMoreTopRated,
   showMoreRecentUpdates,
   getId2,
+  authorMangas,
 };

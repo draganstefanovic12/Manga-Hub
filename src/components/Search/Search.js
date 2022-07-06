@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import SearchCards from "./SearchCards";
 import SearchPagination from "./SearchPagination";
 import "./Search.css";
+import SearchAdvanced from "./SearchAdvanced";
 
 const Search = () => {
   const title = useParams();
@@ -17,6 +18,7 @@ const Search = () => {
   return (
     <>
       <Header />
+      <SearchAdvanced />
       <SearchCards mangas={mangas} />
       <SearchPagination mangas={mangas} title={title} />
     </>
