@@ -73,3 +73,13 @@
   grid-row:  1 / 3;
   width: 210px;
 }
+
+.div-cont {
+  display: flex;
+  align-items: flex-end;
+}
+
+.yotsu-main {
+  height: 250px;
+  align-self: flex-end;
+}
