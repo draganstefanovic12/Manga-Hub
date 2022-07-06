@@ -18,6 +18,13 @@
     grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
 }
 
+@media only screen and (min-width: 2500px) {
+
+    .grid {
+        margin-top: 100px;
+    }
+}
+
 
 .detail {
     grid-row: 2;

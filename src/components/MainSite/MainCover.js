@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const MainCover = ({ data }) => {
-  data && console.log(data);
   return (
     <>
       {data &&

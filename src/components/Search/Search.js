@@ -14,8 +14,6 @@ const Search = () => {
     )}`
   );
 
-  mangas && console.log(mangas);
-
   return (
     <>
       <Header />
