@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Search.css";
 
 const SearchPagination = ({ mangas, title }) => {
-  //can't go over 10,000
+  //can't go over 10,000 results
   let results;
   function handleResults() {
     if (mangas.data.total > 9999) {

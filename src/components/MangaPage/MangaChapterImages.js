@@ -10,7 +10,7 @@ const MangaChapterImages = ({ id }) => {
   const abortCont = new AbortController();
   async function handleChapterImages(url) {
     const data = await axios
-      .get(`${img}${url}?forcePort443=false`, {
+      .get(`${img}${url}`, {
         signal: abortCont.signal,
       })
       .catch((err) => {
