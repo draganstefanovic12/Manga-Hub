@@ -6,7 +6,7 @@ const useFetch = (url) => {
 
   async function handleData(url, abortCont) {
     const data = await axios
-      .get(`http://localhost:5000/${url}`, { signal: abortCont.signal })
+      .get(`${url}`, { signal: abortCont.signal })
       .catch((err) => {
         if (err.message === "CanceledError") {
           console.log("hello");
